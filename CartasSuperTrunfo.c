@@ -14,11 +14,12 @@ int main() {
   float pib;
   int pontosTuristicos;
 
+
   // Tutorial passado ao usuário, contendo as intruções do que irá acontecer.
   printf("Bem vindo ao jogo de cartas Super Trunfo\n");
   printf("Será pedido que você adicione duas cartas, inserindo informações: \n 1: Estado; uma letra de 'A' a 'H'. \n 2: Código da carta; Um número de 01 a 04. \n 3: O nome da cidade. \n 4: População; O número de habitantes. \n 5: Área; A área da cidade em quilômetros quadrados. \n 6: PIB; O Produto Interno Bruto da cidade. \n 7: Número de pontos turísticos; A quantidade de pontos turísticos na cidade \n ");
   printf("Digite o nome do Estado:\n ");
-  scanf("%s", &estado);
+  scanf("%c", &estado);
   printf("Digite o codigo da carta: \n");
   scanf("%s", &codigo);
   printf("Digite o nome da cidade: \n");
@@ -31,14 +32,19 @@ int main() {
   scanf("%f", &pib);
   printf("Digite o número de Pontos Turísticos: \n");
   scanf("%d", &pontosTuristicos);
+  float densidadePopulacional = populacao / area;
+  float pibPorCapita = pib / populacao;
 
-  printf("");
-  printf("");
-  printf("");
-  printf("");
-  printf("");
-  printf("");
-  printf("");
+
+  printf("Nome do estado: %c \n", estado);
+  printf("Código da carta: %s \n", codigo);
+  printf("Nome da cidade: %s \n", nomeCidade);
+  printf("População: %d \n", populacao);
+  printf("Área: %f \n", area);
+  printf("Pib: %.2f \n", pib);
+  printf("Pontos Turísticos: %d \n", pontosTuristicos);
+  printf(" Densidade Populacional: %.2f hab/km²\n", densidadePopulacional);
+  printf("O PIB per Capita é: %.2f \n", pibPorCapita);
 
 return 0;
 } 
