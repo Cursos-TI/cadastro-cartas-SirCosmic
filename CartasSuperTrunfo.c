@@ -6,7 +6,7 @@
 
 int main() {
 
-  char estado;
+  char estado[20];
   char codigo[20];
   char nomeCidade[20];
   int populacao;
@@ -34,7 +34,6 @@ int main() {
   scanf("%d", &pontosTuristicos);
   float densidadePopulacional = populacao / area;
   float pibPorCapita = pib / populacao;
-
 
   printf("Nome do estado: %c \n", estado);
   printf("Código da carta: %s \n", codigo);
