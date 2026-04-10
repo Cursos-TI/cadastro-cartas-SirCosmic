@@ -6,7 +6,7 @@
 
 int main() {
 
-  char estado;
+  char estado[20];
   char codigo[20];
   char nomeCidade[20];
   int populacao;
@@ -32,7 +32,7 @@ int main() {
   printf("Digite o número de Pontos Turísticos: \n");
   scanf("%d", &pontosTuristicos);
 
-  printf("");
+  printf("Nome do estado %s", estado);
   printf("");
   printf("");
   printf("");
