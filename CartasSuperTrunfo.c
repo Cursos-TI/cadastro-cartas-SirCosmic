@@ -6,7 +6,9 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
-    printf("Bem vindo ao jogo de cartas Super trunfo \n");
+    char estado, codigo[10], nomeDaCidade[50];
+    int população, pontosTuristicos;
+    float area, PIB;
   // Área para entrada de dados
 
   // Área para exibição dos dados da cidade
