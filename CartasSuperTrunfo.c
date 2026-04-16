@@ -27,7 +27,7 @@ int main() {
     scanf("%f", &PIB);
     printf("Digite o número de pontos turísticos da cidade: ");
     scanf("%d", &pontosTuristicos);
-    unsigned long int superPoder = população + area + PIB + pontosTuristicos + ( PIB / população) + (- ( população / area));
+    float superPoder = população + area + PIB + pontosTuristicos + ( PIB / população) - (- ( população / area));
   // Área para exibição dos dados da cidade
     printf("\n--- Carta %d ---\n", carta);
     printf("\n--- Dados da Cidade ---\n");
@@ -40,7 +40,7 @@ int main() {
     printf("Pontos Turísticos: %d\n", pontosTuristicos);
     printf("Densidade Populacional: %.2f habitantes/km²\n", população / area);
     printf("PIB per Capita: %.2f\n", PIB / população);
-    printf("Super Poder: %lu\n", superPoder);
+    printf("Super Poder: %.3f\n", superPoder);
 
 
 return 0;
