@@ -10,6 +10,14 @@ int main() {
     int carta, pontosTuristicos;
     float area, PIB;
     unsigned long int população;
+
+    // Área de entrada de dados da segunda carta
+
+    char estado2, codigo2[10], nomeDaCidade2[50];
+    int carta2, pontosTuristicos2;
+    float area2, PIB2;
+    unsigned long int população2;
+    
   // Área para entrada de dados
     printf("Digite o número da carta: ");
     scanf("%d", &carta);
