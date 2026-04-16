@@ -19,6 +19,9 @@ int main() {
     unsigned long int população2;
 
   // Área para entrada de dados
+    printf("Bem-vindo ao cadastro de cartas do Super Trunfo !\n");
+    printf("Por favor, adicione a primeira carta com as informações.\n");
+
     printf("Digite o número da carta: ");
     scanf("%d", &carta);
     printf("Digite o estado da cidade: ");
@@ -37,7 +40,7 @@ int main() {
     scanf("%d", &pontosTuristicos);
     float superPoder = população + area + PIB + pontosTuristicos + ( PIB / população);
 
-    
+
   // Área para exibição dos dados da cidade
     printf("\n--- Carta %d ---\n", carta);
     printf("\n--- Dados da Cidade ---\n");
@@ -51,6 +54,8 @@ int main() {
     printf("Densidade Populacional: %.2f habitantes/km²\n", população / area);
     printf("PIB per Capita: %.2f\n", PIB / população);
     printf("Super Poder: %.3f\n", superPoder);
+
+    printf("\n------------  Agora, por favor, adicione a segunda carta  ------------\n");
 
     // Áre de entrada de dados da segunda carta
     printf("\nDigite o número da carta: ");
@@ -85,6 +90,15 @@ int main() {
     printf("PIB per Capita: %.2f\n", PIB2 / população2);
     printf("Super Poder: %.3f\n", superPoder2);
 
+    // Comparação entre as cartas
+    printf("\n--- Comparação entre as cartas ---\n");
+    if (superPoder > superPoder2) {
+        printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+    } else if (superPoder < superPoder2) {
+        printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+    } else {
+        printf("As cartas %d e %d têm o mesmo poder!\n", carta, carta2);
+    }
 
 return 0;
 } 
