@@ -7,8 +7,9 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     char estado, codigo[10], nomeDaCidade[50];
-    int carta, população, pontosTuristicos;
+    int carta, pontosTuristicos;
     float area, PIB;
+    unsigned long int população;
   // Área para entrada de dados
     printf("Digite o número da carta: ");
     scanf("%d", &carta);
@@ -26,6 +27,7 @@ int main() {
     scanf("%f", &PIB);
     printf("Digite o número de pontos turísticos da cidade: ");
     scanf("%d", &pontosTuristicos);
+    unsigned long int superPoder = população + area + PIB + pontosTuristicos + ( PIB / população) + (- ( população / area));
   // Área para exibição dos dados da cidade
     printf("\n--- Carta %d ---\n", carta);
     printf("\n--- Dados da Cidade ---\n");
@@ -38,6 +40,8 @@ int main() {
     printf("Pontos Turísticos: %d\n", pontosTuristicos);
     printf("Densidade Populacional: %.2f habitantes/km²\n", população / area);
     printf("PIB per Capita: %.2f\n", PIB / população);
+    printf("Super Poder: %lu\n", superPoder);
+
 
 return 0;
 } 
