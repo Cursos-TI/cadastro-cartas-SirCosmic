@@ -17,7 +17,7 @@ int main() {
     int carta2, pontosTuristicos2;
     float area2, PIB2;
     unsigned long int população2;
-    
+
   // Área para entrada de dados
     printf("Digite o número da carta: ");
     scanf("%d", &carta);
@@ -35,7 +35,7 @@ int main() {
     scanf("%f", &PIB);
     printf("Digite o número de pontos turísticos da cidade: ");
     scanf("%d", &pontosTuristicos);
-    float superPoder = população + area + PIB + pontosTuristicos + ( PIB / população) - (- ( população / area));
+    float superPoder = população + area + PIB + pontosTuristicos + ( PIB / população);
   // Área para exibição dos dados da cidade
     printf("\n--- Carta %d ---\n", carta);
     printf("\n--- Dados da Cidade ---\n");
