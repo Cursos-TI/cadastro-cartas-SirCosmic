@@ -7,7 +7,7 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     char estado, codigo[10], nomeDaCidade[50];
-    int carta, pontosTuristicos;
+    int carta, pontosTuristicos, atributoEscolhido;
     float area, PIB;
     unsigned long int população;
 
@@ -91,14 +91,75 @@ int main() {
     printf("Super Poder: %.3f\n", superPoder2);
 
     // Comparação entre as cartas
+
+    // Usuario escolhe o atributo para comparar as cartas
     printf("\n--- Comparação entre as cartas ---\n");
-    if (superPoder > superPoder2) {
-        printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-    } else if (superPoder < superPoder2) {
-        printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-    } else {
-        printf("As cartas %d e %d têm o mesmo poder!\n", carta, carta2);
+    printf("Qual atributo você deseja comparar? \n");
+    printf("1. População \n");
+    printf("2. Área \n");
+    printf("3. PIB \n");
+    printf("4. Pontos Turísticos \n");
+    printf("5. Super Poder \n");
+    scanf("%d", &atributoEscolhido);
+
+    // Comparação dos atributos escolhidos
+    switch (atributoEscolhido) {
+      case 1:
+        if (população > população2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+        } else if (população < população2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+        } else {
+          printf("As cartas %d e %d têm a mesma população!\n", carta, carta2);
+        }
+        break;
+
+      case 2:
+        if (area > area2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+        } else if (area < area2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+        } else {
+          printf("As cartas %d e %d têm a mesma área!\n", carta, carta2);
+        }
+        break;
+
+      case 3:
+        if (PIB > PIB2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+        } else if (PIB < PIB2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+        } else {
+          printf("As cartas %d e %d têm o mesmo PIB!\n", carta, carta2);
+        }
+        break;
+
+      case 4:
+        if (pontosTuristicos > pontosTuristicos2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+        } else if (pontosTuristicos < pontosTuristicos2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+        } else {
+          printf("As cartas %d e %d têm o mesmo número de pontos turísticos!\n", carta, carta2);
+        }
+        break;
+
+      case 5:
+        if (superPoder > superPoder2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
+        } else if (superPoder < superPoder2) {
+          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
+        } else {
+          printf("As cartas %d e %d têm o mesmo super poder!\n", carta, carta2);
+        }
+        break;
+
+      default:
+        printf("Atributo inválido!\n");
+        break;
     }
+
+
 
 return 0;
 } 
