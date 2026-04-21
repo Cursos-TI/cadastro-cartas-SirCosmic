@@ -7,8 +7,8 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     char estado, codigo[10], nomeDaCidade[50];
-    int carta, pontosTuristicos, atributoEscolhido;
-    float area, PIB;
+    int carta, pontosTuristicos, atributoEscolhido1, atributoEscolhido2, resultado1, resultado2;
+    float area, PIB, somaDeAtributos1, somaDeAtributos2;
     unsigned long int população;
 
     // Área de entrada de dados da segunda carta
@@ -100,58 +100,36 @@ int main() {
     printf("3. PIB \n");
     printf("4. Pontos Turísticos \n");
     printf("5. Super Poder \n");
-    scanf("%d", &atributoEscolhido);
 
-    // Comparação dos atributos escolhidos
-    switch (atributoEscolhido) {
+    // Usuário deverá escolher dois atributos para comparar as cartas, caso queira comparar mais de um atributo, 
+    // o programa irá comparar os atributos escolhidos e exibir qual carta é mais forte em cada atributo escolhido.
+    printf("Digite o primeiro atributo que deseja comparar (1-5): ");
+    scanf("%d", &atributoEscolhido1);
+
+    switch (atributoEscolhido1) {
       case 1:
-        if (população > população2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-        } else if (população < população2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-        } else {
-          printf("As cartas %d e %d têm a mesma população!\n", carta, carta2);
-        }
+      printf("Você escolheu comparar a população das cartas.\n");
+      resultado1 = população > população2 ? 1 : 0;
         break;
 
       case 2:
-        if (area > area2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-        } else if (area < area2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-        } else {
-          printf("As cartas %d e %d têm a mesma área!\n", carta, carta2);
-        }
+      printf("Você escolheu comparar a área das cartas.\n");
+      resultado1 = area > area2 ? 1 : 0;
         break;
 
       case 3:
-        if (PIB > PIB2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-        } else if (PIB < PIB2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-        } else {
-          printf("As cartas %d e %d têm o mesmo PIB!\n", carta, carta2);
-        }
+      printf("Você escolheu comparar o PIB das cartas.\n");
+      resultado1 = PIB > PIB2 ? 1 : 0;
         break;
 
       case 4:
-        if (pontosTuristicos > pontosTuristicos2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-        } else if (pontosTuristicos < pontosTuristicos2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-        } else {
-          printf("As cartas %d e %d têm o mesmo número de pontos turísticos!\n", carta, carta2);
-        }
+      printf("Você escolheu comparar os pontos turísticos das cartas.\n");
+      resultado1 = pontosTuristicos > pontosTuristicos2 ? 1 : 0;
         break;
 
       case 5:
-        if (superPoder > superPoder2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta, carta2);
-        } else if (superPoder < superPoder2) {
-          printf("A carta %d é mais forte que a carta %d\n", carta2, carta);
-        } else {
-          printf("As cartas %d e %d têm o mesmo super poder!\n", carta, carta2);
-        }
+      printf("Você escolheu comparar o super poder das cartas.\n");
+      resultado1 = superPoder > superPoder2 ? 1 : 0;
         break;
 
       default:
@@ -160,6 +138,67 @@ int main() {
     }
 
 
+    printf("Digite o segundo atributo que deseja comparar, não use o mesmo atributo (1-5): ");
+    scanf("%d", &atributoEscolhido2);
+
+    // usuario não pode escolher o mesmo atributo para comparar as cartas, caso escolha o mesmo atributo,
+    // o programa irá exibir uma mensagem de erro e solicitar que o usuário escolha um atributo diferente.
+    if ( atributoEscolhido1 == atributoEscolhido2 ) 
+    {
+      printf("Erro: Você não pode escolher o mesmo atributo para comparar as cartas. Por favor, escolha um atributo diferente.\n");
+      scanf("%d", &atributoEscolhido2); // Solicita que o usuário escolha um atributo diferente para comparar as cartas.
+    }
+
+
+    // Comparação do segundo atributo escolhido
+
+    switch (atributoEscolhido2)
+    {
+    case 1:
+      printf("Você escolheu comparar a população das cartas.\n");
+      resultado2 = população > população2 ? 1 : 0;
+      break;
+
+    case 2:
+      printf("Você escolheu comparar a área das cartas.\n");
+      resultado2 = area > area2 ? 1 : 0;
+      break;
+
+    case 3:
+      printf("Você escolheu comparar o PIB das cartas.\n");
+      resultado2 = PIB > PIB2 ? 1 : 0;
+      break;
+
+    case 4:
+      printf("Você escolheu comparar os pontos turísticos das cartas.\n");
+      resultado2 = pontosTuristicos > pontosTuristicos2 ? 1 : 0;
+      break;
+
+    case 5:
+      printf("Você escolheu comparar o super poder das cartas.\n");
+      resultado2 = superPoder > superPoder2 ? 1 : 0;
+      break;
+
+    default:
+      printf("Atributo inválido!\n");
+      break;
+    }
+
+    // Exibição dos resultados da comparação dos atributos escolhidos
+    printf("\n--- Resultados da Comparação ---\n");
+    printf("Comparação do primeiro atributo escolhido: %s\n", resultado1 == 1 ? "Carta 1 é mais forte" : "Carta 2 é mais forte");
+    printf("Comparação do segundo atributo escolhido: %s\n", resultado2 == 1 ? "Carta 1 é mais forte" : "Carta 2 é mais forte"); 
+    
+    if ( resultado1 == 1 && resultado2 == 1 ) 
+    {
+      printf("Carta 1 é a vencedora da comparação!\n");
+    } else if ( resultado1 == 0 && resultado2 == 0 ) 
+    {
+      printf("Carta 2 é a vencedora da comparação!\n");
+    } else 
+    {
+      printf("As cartas estão empatadas na comparação!\n");
+    }
 
 return 0;
 } 
